@@ -6,6 +6,9 @@ def main():
     print("🧥 Fashion Ownership Tracker")
     print("1. Add Item")
     print("2. View Wardrobe")
+    print("3. Export CSV")
+    print("4. Value Summary")
+    print("5. Detect Missing Items")
 
     choice = input("Select option (1 or 2): ")
 
@@ -15,7 +18,12 @@ def main():
         platform = input("Platform (Shopify/Roblox/Wix/etc): ")
         acquisition_type = input("Acquisition Type (cash/robux/earned): ")
         price = float(input("Price: "))
-        currency = input("Currency (USD/Robux/etc): ")
+
+        currency_type = input("Currency Type (premium/soft/fiat): ").strip().lower()
+        if currency_type not in ["premium", "soft", "fiat"]:
+            raise ValueError("Invalid currency type. Must be premium, soft, or fiat.")
+
+        currency_name = input("Currency Name (Robux/Pink Cash/Coins/USD): ")
         source_experience = input("Source Experience (optional): ") or None
         notes = input("Notes (optional): ") or None
 
@@ -25,7 +33,8 @@ def main():
             platform=platform,
             acquisition_type=acquisition_type,
             price=price,
-            currency=currency,
+            currency_name=currency_name,
+            currency_type=currency_type,
             source_experience=source_experience,
             notes=notes,
             verified_visible=True,
@@ -35,6 +44,15 @@ def main():
 
     elif choice == "2":
         list_items()
+
+    elif choice == "3":
+        export_to_csv()
+
+    elif choice == "4":
+        value_summary()
+
+    elif choice == "5":
+        detect_missing_items()
 
     else:
         print("Invalid option.")
