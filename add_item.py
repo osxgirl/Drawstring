@@ -1,5 +1,6 @@
 from models.item import FashionItem
 from tracker import add_item, list_items
+from storage import load_items, save_items
 
 
 def main():
@@ -40,7 +41,11 @@ def main():
             verified_visible=True,
         )
 
-        add_item(item)
+        items = load_items()
+        items.append(item)
+        save_items(items)
+
+        print("Item saved successfully.")
 
     elif choice == "2":
         list_items()

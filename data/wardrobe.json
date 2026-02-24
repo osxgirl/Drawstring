@@ -66,5 +66,23 @@
         "missing_flag": false,
         "date_acquired": "2026-02-20",
         "last_verified": "2026-02-20"
+    },
+    {
+        "id": "ae40287a-7b40-4158-ae8d-1b14d4a1bac5",
+        "name": "Midnight Ribbon Tie",
+        "item_type": "digital",
+        "platform": "Roblox",
+        "acquisition_type": "earned",
+        "price": 199.0,
+        "currency_name": "coins",
+        "currency_type": "soft",
+        "usd_equivalent": null,
+        "source_experience": "Glam Girls DUH",
+        "order_id": null,
+        "notes": "Halter top",
+        "verified_visible": true,
+        "missing_flag": false,
+        "date_acquired": "2026-02-23",
+        "last_verified": "2026-02-23"
     }
 ]
