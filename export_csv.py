@@ -18,6 +18,7 @@ def export_items_to_csv(filename="fashion_ledger_export.csv"):
         "usd_equivalent",
         "source_experience",
         "order_id",
+        "catalog_asset_id",
         "notes",
         "date_acquired",
         "last_verified",

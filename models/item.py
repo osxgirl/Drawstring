@@ -12,6 +12,7 @@ class FashionItem:
         price,
         currency_name,
         currency_type,
+        catalog_asset_id=None,
         usd_equivalent=None,
         source_experience=None,
         order_id=None,
@@ -30,6 +31,7 @@ class FashionItem:
 
         self.source_experience = source_experience
         self.order_id = order_id
+        self.catalog_asset_id = catalog_asset_id
         self.notes = notes
 
         self.date_acquired = datetime.now().strftime("%Y-%m-%d")
@@ -80,6 +82,7 @@ class FashionItem:
             "usd_equivalent": self.usd_equivalent,
             "source_experience": self.source_experience,
             "order_id": self.order_id,
+            "catalog_asset_id": self.catalog_asset_id,
             "notes": self.notes,
             "date_acquired": self.date_acquired,
             "last_verified": self.last_verified,

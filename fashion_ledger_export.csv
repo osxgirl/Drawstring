@@ -1,1 +1,2 @@
-id,name,item_type,platform,acquisition_type,price,currency_name,currency_type,usd_equivalent,source_experience,order_id,notes,date_acquired,last_verified,verified_visible,missing_flag,audit_history
+id,name,item_type,platform,acquisition_type,price,currency_name,currency_type,usd_equivalent,source_experience,order_id,catalog_asset_id,notes,date_acquired,last_verified,verified_visible,missing_flag,audit_history
+1f772191-4851-4b4c-9a5b-59870d734323,Black STL Baseball Fitted Cap,digital,Roblox,robux,90.0,Robux,premium,, DAVINI UGC,,114782976040650,114782976040650,2026-02-24,,,False,[]

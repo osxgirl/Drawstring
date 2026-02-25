@@ -25,6 +25,7 @@ def load_items():
             currency_type=item_data["currency_type"],
             usd_equivalent=item_data.get("usd_equivalent"),
             source_experience=item_data.get("source_experience"),
+            catalog_asset_id=item_data.get("catalog_asset_id"),
             order_id=item_data.get("order_id"),
             notes=item_data.get("notes"),
         )

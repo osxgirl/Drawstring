@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 import csv
 
-DATA_FILE = Path("data/wardrobe.json")
-
+#DATA_FILE = Path("data/wardrobe.json")
+DATA_FILE = Path("fashion_ledger.json")
 
 def load_items():
     if not DATA_FILE.exists():

@@ -19,13 +19,14 @@ def main():
         platform = input("Platform (Shopify/Roblox/Wix/etc): ")
         acquisition_type = input("Acquisition Type (cash/robux/earned): ")
         price = float(input("Price: "))
-
+        
         currency_type = input("Currency Type (premium/soft/fiat): ").strip().lower()
         if currency_type not in ["premium", "soft", "fiat"]:
             raise ValueError("Invalid currency type. Must be premium, soft, or fiat.")
 
         currency_name = input("Currency Name (Robux/Pink Cash/Coins/USD): ")
         source_experience = input("Source Experience (optional): ") or None
+        catalog_asset_id = input("Catalog Asset ID (optional): ") or None
         notes = input("Notes (optional): ") or None
 
         item = FashionItem(
@@ -37,8 +38,9 @@ def main():
             currency_name=currency_name,
             currency_type=currency_type,
             source_experience=source_experience,
+            catalog_asset_id=catalog_asset_id,
             notes=notes,
-            verified_visible=True,
+            #verified_visible=True,
         )
 
         items = load_items()

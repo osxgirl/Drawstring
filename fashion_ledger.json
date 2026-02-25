@@ -1,0 +1,33 @@
+[
+    {
+        "id": "1f772191-4851-4b4c-9a5b-59870d734323",
+        "name": "Black STL Baseball Fitted Cap",
+        "item_type": "digital",
+        "platform": "Roblox",
+        "acquisition_type": "robux",
+        "price": 90.0,
+        "currency_name": "Robux",
+        "currency_type": "premium",
+        "usd_equivalent": null,
+        "source_experience": " DAVINI UGC",
+        "order_id": null,
+        "catalog_asset_id": "114782976040650",
+        "notes": "114782976040650",
+        "date_acquired": "2026-02-24",
+        "last_verified": "2026-02-24",
+        "verified_visible": true,
+        "missing_flag": false,
+        "audit_history": [
+            {
+                "date": "2026-02-24",
+                "status": "present",
+                "scanner_version": "catalog_direct_v1"
+            },
+            {
+                "date": "2026-02-24",
+                "status": "present",
+                "scanner_version": "catalog_direct_v1"
+            }
+        ]
+    }
+]
