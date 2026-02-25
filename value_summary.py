@@ -12,6 +12,7 @@ def generate_value_summary():
 
     missing_count = 0
     verified_count = 0
+    verified_items = [i for i in items if i.verified_visible]
 
     platform_totals = {}
 

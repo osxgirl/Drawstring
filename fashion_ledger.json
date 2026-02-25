@@ -29,5 +29,25 @@
                 "scanner_version": "catalog_direct_v1"
             }
         ]
+    },
+    {
+        "id": "40a9fc46-88bc-4f9c-a99d-bc0e35e9279d",
+        "name": "Extreme Headphones",
+        "item_type": "digital",
+        "platform": "Roblox",
+        "acquisition_type": "robux",
+        "price": 90.0,
+        "currency_name": "Robux",
+        "currency_type": "premium",
+        "usd_equivalent": null,
+        "source_experience": "wearclean",
+        "order_id": null,
+        "catalog_asset_id": "72577208683281",
+        "notes": "misgroupholder",
+        "date_acquired": "2026-02-25",
+        "last_verified": null,
+        "verified_visible": null,
+        "missing_flag": false,
+        "audit_history": []
     }
 ]

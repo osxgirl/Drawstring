@@ -1,6 +1,8 @@
 from models.item import FashionItem
 from tracker import add_item, list_items
 from storage import load_items, save_items
+from audit_runner import run_audit
+import asyncio
 
 
 def main():
@@ -50,7 +52,20 @@ def main():
         print("Item saved successfully.")
 
     elif choice == "2":
-        list_items()
+        items = load_items()
+
+        if not items:
+            print("No items in wardrobe yet.")
+            return
+
+        for item in items:
+            status = (
+                "✅" if item.verified_visible
+                else "❌" if item.missing_flag
+                else "⚪"
+            )
+
+            print(f"{status} {item.name} ({item.platform}) - Last Verified: {item.last_verified}")
 
     elif choice == "3":
         export_to_csv()
@@ -59,7 +74,7 @@ def main():
         value_summary()
 
     elif choice == "5":
-        detect_missing_items()
+        asyncio.run(run_audit())
 
     else:
         print("Invalid option.")
