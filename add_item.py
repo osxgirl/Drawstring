@@ -12,6 +12,7 @@ def main():
     print("3. Export CSV")
     print("4. Value Summary")
     print("5. Detect Missing Items")
+    print("6. Scan DTI Screenshot")
 
     choice = input("Select option (1 or 2): ")
 
@@ -75,6 +76,11 @@ def main():
 
     elif choice == "5":
         asyncio.run(run_audit())
+
+    elif choice == "6":
+        path = input("Enter screenshot file path: ")
+        from dti_ocr_scanner import run_dti_scan
+        run_dti_scan(path)
 
     else:
         print("Invalid option.")
