@@ -2,6 +2,7 @@ import cv2
 import pytesseract
 from storage import load_items, save_items
 import re
+from models.item import FashionItem
 
 
 def normalize(text):
@@ -40,7 +41,7 @@ def clean_ocr_text(text):
 
 def extract_items(text):
     # Look for sequences of capitalized words
-    matches = re.findall(r"[A-Z][a-z]+(?: [A-Z][a-z]+)*", text)
+    matches = re.findall(r"[A-Z][a-z]+(?: [A-Z][a-z]+){0,2}", text)
 
     items = []
 
@@ -74,6 +75,40 @@ def run_dti_scan(image_path):
     print("🧪 Saved processed image as debug_processed.png")
 
     text = extract_text(processed)
+
+    cleaned = clean_ocr_text(text)
+    detected_items = extract_items(cleaned)
+
+    print("\n📦 DETECTED ITEMS:\n")
+    for item in detected_items:
+        print("-", item)
+
+    # Normalize for comparison
+    existing_normalized = {normalize(i.name) for i in items}
+
+    new_items = []
+    for item in detected_items:
+        if normalize(item) not in existing_normalized:
+            new_item = FashionItem(
+                name=item,
+                item_type="Unknown",
+                platform="Roblox",
+                acquisition_type="DTI Unlock",
+                price=0,
+                currency_name="Unknown",
+                currency_type="Unknown",
+            )
+            items.append(new_item)
+            new_items.append(item)
+
+    if new_items:
+        print("\n✨ NEW ITEMS ADDED:")
+        for item in new_items:
+            print("+", item)
+    else:
+        print("\n✔ No new items found.")
+
+    save_items(items)
 
     print("\n🔎 OCR RAW OUTPUT:\n")
     print(repr(text))
