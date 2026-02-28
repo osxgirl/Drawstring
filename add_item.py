@@ -14,7 +14,7 @@ def main():
     print("5. Detect Missing Items")
     print("6. Scan DTI Screenshot")
 
-    choice = input("Select option (1 or 2): ")
+    choice = input("Select option (1 - 6): ")
 
     if choice == "1":
         name = input("Item Name: ")
