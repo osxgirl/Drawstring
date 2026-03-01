@@ -20,14 +20,14 @@ def main():
         name = input("Item Name: ")
         item_type = input("Type (physical/digital): ")
         platform = input("Platform (Shopify/Roblox/Wix/etc): ")
-        acquisition_type = input("Acquisition Type (cash/robux/earned): ")
+        acquisition_type = input("Acquisition Type (cash/robux/earned/game): ")
         price = float(input("Price: "))
         
-        currency_type = input("Currency Type (premium/soft/fiat): ").strip().lower()
-        if currency_type not in ["premium", "soft", "fiat"]:
-            raise ValueError("Invalid currency type. Must be premium, soft, or fiat.")
+        currency_type = input("Currency Type (premium/soft/fiat/none): ").strip().lower()
+        if currency_type not in ["premium", "soft", "fiat", "none"]:
+            raise ValueError("Invalid currency type. Must be premium, soft, fiat, or none.")
 
-        currency_name = input("Currency Name (Robux/Pink Cash/Coins/USD): ")
+        currency_name = input("Currency Name (Robux/Pink Cash/Coins/USD/None): ")
         source_experience = input("Source Experience (optional): ") or None
         catalog_asset_id = input("Catalog Asset ID (optional): ") or None
         notes = input("Notes (optional): ") or None
