@@ -9,6 +9,7 @@ class FashionItem:
         item_type,
         platform,
         acquisition_type,
+        acquisition_channel,
         price,
         currency_name,
         currency_type,
@@ -23,6 +24,7 @@ class FashionItem:
         self.item_type = item_type
         self.platform = platform
         self.acquisition_type = acquisition_type
+        self.acquisition_channel = acquisition_channel
 
         self.price = price
         self.currency_name = currency_name
@@ -76,6 +78,7 @@ class FashionItem:
             "item_type": self.item_type,
             "platform": self.platform,
             "acquisition_type": self.acquisition_type,
+            "acquisition_channel": self.acquisition_channel,
             "price": self.price,
             "currency_name": self.currency_name,
             "currency_type": self.currency_type,

@@ -20,8 +20,46 @@ def main():
         name = input("Item Name: ")
         item_type = input("Type (physical/digital): ")
         platform = input("Platform (Shopify/Roblox/Wix/etc): ")
-        acquisition_type = input("Acquisition Type (cash/robux/earned/game): ")
-        price = float(input("Price: "))
+        acquisition_type = input("\nAcquisition Type:")
+        print("1. premium_purchase (Robux)")
+        print("2. soft_currency_purchase (Pink Cash)")
+        print("3. achievement_reward")
+        print("4. event_reward")
+        print("5. free_code")
+        print("6. starter_item")
+
+        type_choice = input("Choose number: ")
+
+        type_map = {
+            "1": "premium_purchase",
+            "2": "soft_currency_purchase",
+            "3": "achievement_reward",
+            "4": "event_reward",
+            "5": "free_code",
+            "6": "starter_item"
+        }
+
+        acquisition_type = type_map.get(type_choice)
+        acquisition_channel = input("\nAcquisition Channel:")
+        print("1. robux_store")
+        print("2. pink_cash_store")
+        print("3. code_unlock")
+        print("4. event_unlock")
+        print("5. achievement_tab")
+
+        channel_choice = input("Choose number: ")
+
+        channel_map = {
+            "1": "robux_store",
+            "2": "pink_cash_store",
+            "3": "code_unlock",
+            "4": "event_unlock",
+            "5": "achievement_tab"
+        }
+
+        acquisition_channel = channel_map.get(channel_choice)
+        price_input = input("Price (0 if free): ")
+        price = float(price_input) if price_input else 0.0
         
         currency_type = input("Currency Type (premium/soft/fiat/none): ").strip().lower()
         if currency_type not in ["premium", "soft", "fiat", "none"]:
@@ -37,6 +75,7 @@ def main():
             item_type=item_type,
             platform=platform,
             acquisition_type=acquisition_type,
+            acquisition_channel=acquisition_channel,
             price=price,
             currency_name=currency_name,
             currency_type=currency_type,
