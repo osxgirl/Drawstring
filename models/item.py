@@ -9,15 +9,13 @@ class FashionItem:
         item_type,
         platform,
         acquisition_type,
-        acquisition_channel,
-        price,
-        currency_name,
-        currency_type,
-        catalog_asset_id=None,
-        usd_equivalent=None,
+        acquisition_channel=None,
+        price=0,
+        currency_type=None,
+        currency_name=None,
         source_experience=None,
-        order_id=None,
-        notes=None,
+        catalog_asset_id=None,
+        notes=None
     ):
         self.id = str(uuid.uuid4())
         self.name = name
@@ -29,10 +27,8 @@ class FashionItem:
         self.price = price
         self.currency_name = currency_name
         self.currency_type = currency_type
-        self.usd_equivalent = usd_equivalent
 
         self.source_experience = source_experience
-        self.order_id = order_id
         self.catalog_asset_id = catalog_asset_id
         self.notes = notes
 
@@ -82,9 +78,7 @@ class FashionItem:
             "price": self.price,
             "currency_name": self.currency_name,
             "currency_type": self.currency_type,
-            "usd_equivalent": self.usd_equivalent,
             "source_experience": self.source_experience,
-            "order_id": self.order_id,
             "catalog_asset_id": self.catalog_asset_id,
             "notes": self.notes,
             "date_acquired": self.date_acquired,

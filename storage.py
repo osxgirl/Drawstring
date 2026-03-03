@@ -16,17 +16,16 @@ def load_items():
 
     for item_data in raw_data:
         item = FashionItem(
-            name=item_data["name"],
-            item_type=item_data["item_type"],
-            platform=item_data["platform"],
-            acquisition_type=item_data["acquisition_type"],
-            price=item_data["price"],
-            currency_name=item_data["currency_name"],
-            currency_type=item_data["currency_type"],
-            usd_equivalent=item_data.get("usd_equivalent"),
+            name=item_data.get("name"),
+            item_type=item_data.get("item_type"),
+            platform=item_data.get("platform"),
+            acquisition_type=item_data.get("acquisition_type"),
+            acquisition_channel=item_data.get("acquisition_channel"),
+            price=item_data.get("price", 0),
+            currency_type=item_data.get("currency_type"),
+            currency_name=item_data.get("currency_name"),
             source_experience=item_data.get("source_experience"),
             catalog_asset_id=item_data.get("catalog_asset_id"),
-            order_id=item_data.get("order_id"),
             notes=item_data.get("notes"),
         )
 
